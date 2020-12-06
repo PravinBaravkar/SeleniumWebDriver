@@ -8,7 +8,7 @@ public class OpenMicrosoftEdgeBrowser {
 	public static void main(String[] args) {
 
 		System.setProperty("webdriver.edge.driver",
-				"./resources/drivers/edgedriver_win64/msedgedriver.exe");
+				"./../resources/drivers/edgedriver_win64/msedgedriver.exe");
 
 		WebDriver driver = new EdgeDriver();
 		driver.manage().window().maximize();

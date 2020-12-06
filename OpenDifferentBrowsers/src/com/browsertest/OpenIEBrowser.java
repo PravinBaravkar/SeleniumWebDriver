@@ -9,7 +9,7 @@ public class OpenIEBrowser {
 
 		// 32 bit IE Driver
 		System.setProperty("webdriver.ie.driver",
-				"./resources/drivers/IEDriverServer_Win32_3.10.0/IEDriverServer.exe");
+				"./../resources/drivers/IEDriverServer_Win32_3.10.0/IEDriverServer.exe");
 
 		// 64 bit IE Driver
 		/*
