@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.masteringselenium</groupId>
+	<artifactId>mastering-selenium-testng</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>Mastering Selenium TestNG</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!--Dependency versions -->
+		<java.compiler.version>1.8</java.compiler.version>
+		<selenium.version>3.10.0</selenium.version>
+		<!--Configurable vaiables -->
+		<threads>1</threads>
+		<browser>firefox</browser>
+		<!--Grid Configurable vaiables -->
+		<use.remote.grid.server>false</use.remote.grid.server>
+		<selenium.grid.url></selenium.grid.url>
+		<test.platform></test.platform>
+		<test.browser.version></test.browser.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${selenium.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.0.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>${java.compiler.version}</source>
+					<target>${java.compiler.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>3.0.0-M5</version>
+				<configuration>
+					<parallel>methods</parallel>
+					<threadCount>${threads}</threadCount>
+					<systemProperties>
+						<browser>${browser}</browser>
+						<useRemoteGridServer>${use.remote.grid.server}</useRemoteGridServer>
+						<seleniumGridServerUrl>${selenium.grid.url}</seleniumGridServerUrl>
+						<desiredTestPlatform>${test.platform}</desiredTestPlatform>
+						<desiredBrowserVersion>${test.browser.version}</desiredBrowserVersion>
+					</systemProperties>
+					<!-- If includes is not added and all java files that start or ends 
+						with "test" will be picked by maven-surefire-plugin However we want to run 
+						it from maven-failsafe-plugin -->
+					<includes>
+						<include>**/*Demo.java</include>
+					</includes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
