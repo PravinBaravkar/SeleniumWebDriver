@@ -16,7 +16,7 @@ public class VerifyErrorMessages {
 		driver.get("https://gmail.com");
 
 		WebElement nextButton = driver.findElement(By.xpath("//*[text()='Next']//ancestor::button"));
-		//WebElement nextButton = driver.findElement(By.xpath("//span[contains(text(),'Next')]"));
+		// WebElement nextButton = driver.findElement(By.xpath("//span[contains(text(),'Next')]"));
 		nextButton.click();
 
 		// JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -33,7 +33,7 @@ public class VerifyErrorMessages {
 
 		System.out.println(actualErrorMessage.equals(expectedErrorMessage) ? "Error mesage as expected"
 				: "Error message is NOT as expected");
-		
+
 		driver.quit();
 
 	}

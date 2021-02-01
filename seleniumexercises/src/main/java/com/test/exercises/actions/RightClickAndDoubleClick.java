@@ -56,7 +56,8 @@ public class RightClickAndDoubleClick {
 
 		Thread.sleep(2000);
 
-		act.doubleClick(driver.findElement(By.xpath("//span[text()='Double click the block']//preceding::div"))).perform();
+		act.doubleClick(driver.findElement(By.xpath("//span[text()='Double click the block']//preceding::div")))
+				.perform();
 
 		Thread.sleep(2000);
 
