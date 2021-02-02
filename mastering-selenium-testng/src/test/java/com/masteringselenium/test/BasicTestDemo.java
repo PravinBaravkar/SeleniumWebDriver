@@ -38,27 +38,27 @@ public class BasicTestDemo extends DriverFactory {
 		searchInGoogle("Selenium");
 	}
 
-	//@Test
+	@Test
 	public void googleSearchTestNGExample() throws Exception {
 		searchInGoogle("TestNG");
 	}
 
-	//@Test
+	@Test
 	public void googleSearchWebDriverExample() throws Exception {
 		searchInGoogle("WebDriver");
 	}
 
-	//@Test
+	@Test
 	public void googleSearchMavenExample() throws Exception {
 		searchInGoogle("Maven");
 	}
 
-	//@Test
+	@Test
 	public void googleSearchJenkinsExample() throws Exception {
 		searchInGoogle("Jenkins");
 	}
 
-	//@Test
+	@Test
 	public void googleSearchAntExample() throws Exception {
 		searchInGoogle("Ant");
 	}

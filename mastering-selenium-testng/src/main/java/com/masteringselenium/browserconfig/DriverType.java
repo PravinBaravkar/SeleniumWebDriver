@@ -44,7 +44,7 @@ public enum DriverType implements DriverSetup {
 			return new ChromeDriver(options);
 		}
 	},
-	IE {
+	INTERNETEXPLORER {
 		public WebDriver getWebDriverObject(DesiredCapabilities capabilities) throws IOException {
 			System.setProperty("webdriver.ie.driver",
 					"./../resources/drivers/IEDriverServer_Win32_3.10.0/IEDriverServer.exe");

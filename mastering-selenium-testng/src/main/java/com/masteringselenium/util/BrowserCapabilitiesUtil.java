@@ -20,7 +20,7 @@ public class BrowserCapabilitiesUtil {
 		case "CHROME":
 			capabilities = DesiredCapabilities.chrome();
 			break;
-		case "IE":
+		case "INTERNETEXPLORER":
 			capabilities = DesiredCapabilities.internetExplorer();
 			break;
 		case "SAFARI":
